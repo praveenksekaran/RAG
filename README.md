@@ -88,6 +88,9 @@ When a user query enters the system, it must also be converted into an embedding
 Once the query is converted into an embedding, the system compares the query embedding with the document embeddings. It identifies and retrieves chunks whose embeddings are most similar to the query embedding, using measures such as cosine similarity and Euclidean distance.
 These chunks are considered to be the most relevant to the user’s query.
 
+### 3.a ReRanking
+<toDo>
+
 ## 4.Generation
 The retrieved text chunks, along with the initial user query, are fed into a language model. The algorithm will use this information to generate a coherent response to the user’s questions through a chat interface.
 
