@@ -135,3 +135,15 @@ https://www.youtube.com/watch?v=smGbeghV1JE&pp=ygUidG9wIHJhZyB0ZWNobmlxdWVzIGluI
 
 Testing RAG:
 https://www.youtube.com/watch?v=5fp6e5nhJRk&pp=ygUidG9wIHJhZyB0ZWNobmlxdWVzIGluIEFJIGV4cGxhaW5lZA%3D%3D
+
+
+# Load Documents
+loader = WebBaseLoader(
+    web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
+    bs_kwargs=dict(
+        parse_only=bs4.SoupStrainer(
+            class_=("post-content", "post-title", "post-header")
+        )
+    ),
+)
+docs = loader.load()

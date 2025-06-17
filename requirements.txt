@@ -1,0 +1,11 @@
+fitz
+PyMuPDF
+numpy==2.3.0
+openai
+python-dotenv
+deepeval
+langchain
+rank_bm25
+langchain_community
+langchain_cohere
+pypdf
