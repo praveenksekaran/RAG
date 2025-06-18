@@ -2,18 +2,18 @@
 all info related to RAG. Learning, types and code. 
 Retrieval-Augmented Generation (RAG). RAG is a method that retrieves relevant information from a knowledge base and appends it to the user's prompt, significantly enhancing the model's response.
 
-[latest updates](https://github.com/hymie122/RAG-Survey)
-[All-RAG-Techniques](https://github.com/FareedKhan-dev/all-rag-techniques/blob/main/01_simple_rag.ipynb)
-[All-RAG-Techniques](https://github.com/NirDiamant/RAG_Techniques)
+- [latest updates](https://github.com/hymie122/RAG-Survey)
+- [All-RAG-Techniques](https://github.com/FareedKhan-dev/all-rag-techniques/blob/main/01_simple_rag.ipynb)
+- [All-RAG-Techniques](https://github.com/NirDiamant/RAG_Techniques)
 
 # 6 different types of RAG techniqies
 
-#### 1. Standard RAG 
+## 1. Standard RAG 
 combines 2 RAG concepts. a retrival model (search engine) and a generative model (like GTP).
 Good : when you need to retive factual information from external source, while would like to maintain creativity of Gen AI . 
 Examples: Customer support chat bot. 
 
-#### 2. Corrective RAG
+## 2. Corrective RAG
 in addition to Standard RAG, adds a validation process to make generated response is not just fluent but also factually correct. 
 After the initial retrival & generation, the optput is cross check with trusted data set.
 e.g. in medical applications the response might be validated aganist medical papaers or clinical guidlines. if any discrepency or inaccuries are foiund, the model corrects them before presenting it. 
@@ -22,7 +22,7 @@ Examples: Ideal for Healthcare or legal research where accuracy is paramount, re
 [research paper](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://arxiv.org/pdf/2401.15884)
 [langGraph implementation](https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_crag/)
 
-#### 3. Speculative RAG 
+## 3. Speculative RAG 
 Explorative approach. Imagine a question with multiple possible interpretation, Speculative RAG generates multiple possible responses. Then ranks them based on relavence and accuracy. 
 The model first retrives the relavent documents, then speculates by generating several possible answers, each of the answers is scored using feedback mechanism which could involve comparing thme to additioanl regtruived documents or using a scoring model to determine which is more relavent. once the higest scoring answer is identified, its presented as final anaswer. This type is particualrly useful for ambigious queries situations where there can be multiple correct answers.
 Examples: Asking for recomendations or exploring complex topics whith many possible interpretations. 
@@ -32,16 +32,16 @@ Examples: Asking for recomendations or exploring complex topics whith many possi
 [LangGraph implementation](https://github.com/jjovalle99/Speculative-RAG)
 
 
-#### 4. Fusion RAG
+## 4. Fusion RAG
 integrating information from multiple sources. is technique is designed for well rounded comprehensive response by combining data from various different documents. in fusion rag the system retrives multiple documents that offers multiple perspectives or cover various aspects of the query, the generative model then sysnthesis this information merging relavatent points of the query into unified response. if there is conflicting information the model resolves by considering additioanl context or the credibility of the sources.
 Example: if you are asking about best programming language in 2025, fusing RAG will pull daat from various sources: Blog, posts, Job portals etc. and genrates a balance response which considers all these perspectives. 
 
-#### 5. Agentic RAG
+## 5. Agentic RAG
 In this technique involves AI acting autonmously, with a specific goal in mind, retriving information and making decisions on its own to achieve desired outcome. 
 first, the model is given a specific goal like explaining a complex concept or solving a problem, it then automously plans its actions, deciding which information to retrieve and how to use it achieve the goal. The model iterates this process, refining its understanding and actions dynamically. adjusting its strategy with the feedback it gets during the task. 
 Example: AI tutor to explain quantam mechanics - Agentic RAG will automomously plan series of steps, retrieve relavent academic papaers or tutorials, breakdown the information, and guide you thru the explanation step by step. 
 
-#### 6. Self RAG
+## 6. Self RAG
 Innovative technique allows the model to improve itself overtime by using its own outputs as new datapoints for future retrival. in Self RAG, AI starts by retriving information and generating response like usual, it stores it own generated response in dedicated repository. next time similar query comes up, the model retrives not just from origunal corpus but also from its previous outputs alloing it to build upon its past knowldge. over time self RAG, enables the model to continously refine its answers learning from its own innovations. this makes it powerful in scnerios whnere the model can benefit from continous learning such as customer service bots, personalized tutoring system 
 
 # Steps to implement RAG 
