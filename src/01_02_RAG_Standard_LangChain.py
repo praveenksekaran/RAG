@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
-os.environ['LANGCHAIN_ENDPOINT'] = 'https://api.smith.langchain.com'
+os.environ['LANGCHAIN_ENDPOINT'] = 'URL HERE'
 os.environ['LANGCHAIN_API_KEY'] = 'YOUR KEY HERE'
 #USER_AGENT environment variable not set
 
