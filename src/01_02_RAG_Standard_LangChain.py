@@ -4,16 +4,16 @@ import os
 load_dotenv()
 os.environ['LANGCHAIN_TRACING_V2'] = 'true'
 os.environ['LANGCHAIN_ENDPOINT'] = 'https://api.smith.langchain.com'
-os.environ['LANGCHAIN_API_KEY'] = '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'
+os.environ['LANGCHAIN_API_KEY'] = 'YOUR KEY HERE'
 #USER_AGENT environment variable not set
 
 #pip install -qU "langchain[groq]"
 import getpass
 if not os.environ.get("GROQ_API_KEY"):
-  os.environ["GROQ_API_KEY"] = getpass.getpass("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")
+  os.environ["GROQ_API_KEY"] = getpass.getpass("YOUR KEY HERE")
 
 if not os.environ.get("OPENAI_API_KEY"):
-    os.environ["OPENAI_API_KEY"] = getpass("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")
+    os.environ["OPENAI_API_KEY"] = getpass("YOUR KEY HERE")
 
 from langchain.chat_models import init_chat_model
 
