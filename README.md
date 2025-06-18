@@ -119,6 +119,20 @@ The retrieved text chunks, along with the initial user query, are fed into a lan
 ## 5.Testing 
 How to test RAGS for accuracy and correctness.
 
+# Special Implementations
+
+## Using OpenAI inbuild 
+- Goto https://platform.openai.com/playground
+- Tools "+"
+- Select vector store
+- Vector stores
+-  In the new page: give a name, attach files and create
+-  copy the vs_xxx ID
+-  Also generate a API Keys for this project/tool
+
+Follow src/11_01_RAG_OPENAI_FileSearch.py for the implementation
+
+# Things todo
 
 Knowldge Graph : https://medium.com/@iamshowkath/understanding-knowledge-graph-stores-a-comprehensive-comparison-d7b9248c1ecd 
 
