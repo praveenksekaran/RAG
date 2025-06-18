@@ -51,12 +51,22 @@ Innovative technique allows the model to improve itself overtime by using its ow
 ## 1. Data collection
 first gather all the data that is needed for your application. In the case of a customer support chatbot for an electronics company, this can include user manuals, a product database, and a list of FAQs.
 
+- PDF : done
+- Word
+- Excel/CSV : done
+- Vector DB : done
+- Websites : done
+- Images
+- Videos
+
 ## 2. Indexing 
 
 #### 2.a Data Chunking
 Data chunking is the process of breaking your data down into smaller, more manageable pieces. For instance, if you have a lengthy 100-page user manual, you might break it down into different sections, each potentially answering different customer questions.
 This way, each chunk of data is focused on a specific topic. When a piece of information is retrieved from the source dataset, it is more likely to be directly applicable to the user’s query, since we avoid including irrelevant information from entire documents.
 This also improves efficiency, since the system can quickly obtain the most relevant pieces of information instead of processing entire documents.
+
+check SematicChunking for different chunking methods and Standard for basic ones. 
 
 #### 2.b Document embeddings
 Now that the source data has been broken down into smaller parts, it needs to be converted into a vector representation. This involves transforming text data into embeddings, which are numeric representations that capture the semantic meaning behind text.
@@ -88,8 +98,20 @@ When a user query enters the system, it must also be converted into an embedding
 Once the query is converted into an embedding, the system compares the query embedding with the document embeddings. It identifies and retrieves chunks whose embeddings are most similar to the query embedding, using measures such as cosine similarity and Euclidean distance.
 These chunks are considered to be the most relevant to the user’s query.
 
-### 3.a ReRanking
+### 3.a Keyword Search
+Search for keyword in embeddings. check llamaidex example 
+
+### 3.b Semantic Search
+All examples implements this. the o/p depends on storing and retival strategy. 
+
+### 3.c Filtering
+use llamaIndex lib for storing and filtering s=using metadata.
+
+### 3.d ReRanking
 <toDo>
+
+### 3.e cosine similarity
+<todo>
 
 ## 4.Generation
 The retrieved text chunks, along with the initial user query, are fed into a language model. The algorithm will use this information to generate a coherent response to the user’s questions through a chat interface.
@@ -97,21 +119,10 @@ The retrieved text chunks, along with the initial user query, are fed into a lan
 ## 5.Testing 
 How to test RAGS for accuracy and correctness.
 
-Chucking 
-Embedding 
 
-PDF, word, Excel 
-DB
-Websites 
-
-
-Keyword Search 
-Schmentic or Vector Search 
-
-Vector DB 
 Knowldge Graph : https://medium.com/@iamshowkath/understanding-knowledge-graph-stores-a-comprehensive-comparison-d7b9248c1ecd 
 
-cosine similarity
+
 
 
 
@@ -138,15 +149,3 @@ https://www.youtube.com/watch?v=smGbeghV1JE&pp=ygUidG9wIHJhZyB0ZWNobmlxdWVzIGluI
 
 Testing RAG:
 https://www.youtube.com/watch?v=5fp6e5nhJRk&pp=ygUidG9wIHJhZyB0ZWNobmlxdWVzIGluIEFJIGV4cGxhaW5lZA%3D%3D
-
-
-# Load Documents
-loader = WebBaseLoader(
-    web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
-    bs_kwargs=dict(
-        parse_only=bs4.SoupStrainer(
-            class_=("post-content", "post-title", "post-header")
-        )
-    ),
-)
-docs = loader.load()
