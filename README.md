@@ -36,12 +36,13 @@ Examples: Asking for recomendations or exploring complex topics whith many possi
 integrating information from multiple sources. is technique is designed for well rounded comprehensive response by combining data from various different documents. in fusion rag the system retrives multiple documents that offers multiple perspectives or cover various aspects of the query, the generative model then sysnthesis this information merging relavatent points of the query into unified response. if there is conflicting information the model resolves by considering additioanl context or the credibility of the sources.
 Example: if you are asking about best programming language in 2025, fusing RAG will pull daat from various sources: Blog, posts, Job portals etc. and genrates a balance response which considers all these perspectives. 
 
+[Llama Index](https://docs.llamaindex.ai/en/stable/examples/low_level/fusion_retriever/)
+
 ## 5. Agentic RAG
 In this technique involves AI acting autonmously, with a specific goal in mind, retriving information and making decisions on its own to achieve desired outcome. 
 first, the model is given a specific goal like explaining a complex concept or solving a problem, it then automously plans its actions, deciding which information to retrieve and how to use it achieve the goal. The model iterates this process, refining its understanding and actions dynamically. adjusting its strategy with the feedback it gets during the task. 
 Example: AI tutor to explain quantam mechanics - Agentic RAG will automomously plan series of steps, retrieve relavent academic papaers or tutorials, breakdown the information, and guide you thru the explanation step by step. 
 
-[Llama Index](https://docs.llamaindex.ai/en/stable/examples/low_level/fusion_retriever/)
 [Llama Index 2](https://medium.com/@gazalashaikh999/agentic-rag-with-llamaindex-and-llm-3b7ff94b8b28)
 
 ## 6. Self RAG
