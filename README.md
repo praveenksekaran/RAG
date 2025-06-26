@@ -41,6 +41,8 @@ In this technique involves AI acting autonmously, with a specific goal in mind, 
 first, the model is given a specific goal like explaining a complex concept or solving a problem, it then automously plans its actions, deciding which information to retrieve and how to use it achieve the goal. The model iterates this process, refining its understanding and actions dynamically. adjusting its strategy with the feedback it gets during the task. 
 Example: AI tutor to explain quantam mechanics - Agentic RAG will automomously plan series of steps, retrieve relavent academic papaers or tutorials, breakdown the information, and guide you thru the explanation step by step. 
 
+[Llama Index](https://docs.llamaindex.ai/en/stable/examples/low_level/fusion_retriever/)
+
 ## 6. Self RAG
 Innovative technique allows the model to improve itself overtime by using its own outputs as new datapoints for future retrival. in Self RAG, AI starts by retriving information and generating response like usual, it stores it own generated response in dedicated repository. next time similar query comes up, the model retrives not just from origunal corpus but also from its previous outputs alloing it to build upon its past knowldge. over time self RAG, enables the model to continously refine its answers learning from its own innovations. this makes it powerful in scnerios whnere the model can benefit from continous learning such as customer service bots, personalized tutoring system 
 
