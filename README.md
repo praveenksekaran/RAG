@@ -167,3 +167,5 @@ https://www.youtube.com/watch?v=smGbeghV1JE&pp=ygUidG9wIHJhZyB0ZWNobmlxdWVzIGluI
 
 Testing RAG:
 https://www.youtube.com/watch?v=5fp6e5nhJRk&pp=ygUidG9wIHJhZyB0ZWNobmlxdWVzIGluIEFJIGV4cGxhaW5lZA%3D%3D
+
+Answering questions from DB: https://python.langchain.com/docs/tutorials/sql_qa/
