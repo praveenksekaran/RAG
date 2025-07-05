@@ -9,3 +9,5 @@ rank_bm25
 langchain_community
 langchain_cohere
 pypdf
+psycopg2-binary
+langchain_postgres
