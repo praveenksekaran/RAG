@@ -6,7 +6,8 @@ Retrieval-Augmented Generation (RAG). RAG is a method that retrieves relevant in
 - [All-RAG-Techniques](https://github.com/FareedKhan-dev/all-rag-techniques/blob/main/01_simple_rag.ipynb)
 - [All-RAG-Techniques](https://github.com/NirDiamant/RAG_Techniques)
 
-# 6 different types of RAG techniqies
+# Different types of RAG techniqies
+there are many many types of RAG techniques. only few few are tried in this project. 
 
 ## 1. Standard RAG 
 combines 2 RAG concepts. a retrival model (search engine) and a generative model (like GTP).
@@ -123,7 +124,43 @@ use llamaIndex lib for storing and filtering s=using metadata.
 The retrieved text chunks, along with the initial user query, are fed into a language model. The algorithm will use this information to generate a coherent response to the user’s questions through a chat interface.
 
 ## 5.Testing 
-How to test RAGS for accuracy and correctness.
+
+#### Manual testing 
+Quesions and grounding truth was created manually and evaluated. 
+
+- [project](https://github.com/praveenksekaran/RAG/blob/main/src/01_01_RAG_Standard.ipynb)
+
+#### Ragas
+Testing using ragas framework can be performed very easily. ragas is a open source framework which can generate test data and run test aganist it.
+In this project 4 metrics were tested faithfulness, answer_relevancy,context_precision and context_recall
+
+- [ragas](https://docs.ragas.io/en/stable/howtos/)
+- [project](https://github.com/praveenksekaran/RAG/blob/main/src/RAG_Testing_RAGAS.ipynb)
+
+- Faithfulness
+  (is the answer avaliable in the retrived data)
+The Faithfulness metric measures how factually consistent a response is with the retrieved context. It ranges from 0 to 1, with higher scores indicating better consistency.A response is considered faithful if all its claims can be supported by the retrieved context.
+To calculate this:
+  1. Identify all the claims in the response.
+  2. Check each claim to see if it can be inferred from the retrieved context.
+
+- Response Relevancy
+  (how close the answer to ground truth)
+  The ResponseRelevancy metric measures how relevant a response is to the user input. Higher scores indicate better alignment with the user input, while lower scores are given if the response is incomplete or includes redundant information.
+  This metric is calculated using the user_input and the response as follows:
+  1. Generate a set of artificial questions (default is 3) based on the response. These questions are designed to reflect the content of the response
+  2. Compute the cosine similarity between the embedding of the user input (Eo) and the embedding of each generated question (Eg).
+  3. Take the average of these cosine similarity scores to get the Answer Relevancy:
+
+     Note: While the score usually falls between 0 and 1, it is not guaranteed due to cosine similarity's mathematical range of -1 to 1.
+
+     An answer is considered relevant if it directly and appropriately addresses the original question. This metric focuses on how well the answer matches the intent of the question, without evaluating factual accuracy. It penalizes answers that are incomplete or include unnecessary details.
+
+- Context Precision
+  Context Precision is a metric that measures the proportion of relevant chunks in the retrieved_contexts. It is calculated as the mean of the precision@k for each chunk in the context. Precision@k is the ratio of the number of relevant chunks at rank k to the total number of chunks at rank k.
+
+- Context Recall
+  Context Recall measures how many of the relevant documents (or pieces of information) were successfully retrieved. It focuses on not missing important results. Higher recall means fewer relevant documents were left out. In short, recall is about not missing anything important. Since it is about not missing anything, calculating context recall always requires a reference to compare against.
 
 # Special Implementations
 
